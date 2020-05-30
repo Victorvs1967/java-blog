@@ -1,9 +1,6 @@
 package com.vvs.javablog.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Post {
@@ -12,7 +9,11 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String title, description, text;
+    private String title, description;
+
+    @Column(columnDefinition="LONGTEXT")
+    private String text;
+
     private int reviews;
 
     public Post(String title, String description, String text) {
