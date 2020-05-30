@@ -103,5 +103,4 @@ public class JavaBlogController {
         postRepository.delete(post);
         return "redirect:/blog";
     }
-
 }
