@@ -58,14 +58,10 @@ public class JavaBlogController {
         if (!postRepository.existsById(id)) {
             return "redirect:/blog";
         }
-//        Optional<Post> post = postRepository.findById(id);
         Post post = postRepository.findById(id).orElseThrow();
-//        ArrayList<Post> res = new ArrayList();
-//        post.ifPresent(res::add);
         int reviews = post.getReviews() + 1;
         post.setReviews(reviews);
         postRepository.save(post);
-//        model.addAttribute("post", res);
         model.addAttribute("post", post);
         model.addAttribute("title", "Blog Details");
         return "blog-details";
