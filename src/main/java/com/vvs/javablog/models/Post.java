@@ -11,7 +11,7 @@ public class Post {
 
     private String title, description;
 
-    @Column(columnDefinition="LONGTEXT")
+    @Column(columnDefinition="TEXT")
     private String text;
 
     private int reviews;
