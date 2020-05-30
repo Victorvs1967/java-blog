@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">\
+<head th:insert="blocks/head :: head"></head>
+<body>
+<div class="container">
+    <header th:insert="blocks/header :: header"></header>
+</div>
+
+<main role="main" class="container mt-5 mb-5">
+    <div th:each="item: ${post}">
+        <form method="POST">
+            <input type="text" name="title" placeholder="Enter post title" class="form-control" th:value="${item.title}"><br>
+            <input type="text" name="description" placeholder="Enter post description" class="form-control" th:value="${item.description}"><br>
+            <textarea name="text" placeholder="Enter post text" class="form-control" th:text="${item.text}" /><br>
+            <button type="submit" class="btn btn-success">Update</button>
+        </form>
+    </div>
+</main><!-- /.container -->
+<footer th:insert="blocks/footer :: footer"></footer>
+</body>
+</html>
