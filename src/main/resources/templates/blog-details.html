@@ -11,10 +11,12 @@
         <h2 th:text="${item.title}" />
         <p th:text="${item.text}" />
         <p><b>Reviews: </b><span th:text="${item.reviews}" /></p>
-        <a th:href="'/blog/' + ${item.id} + '/edit'" class="btn btn-warning" />Edit</a><br><br>
-        <form th:action="'/blog/' + ${item.id} + '/delete'" method="POST">
-            <button class="btn btn-warning d-flex" type="submit">Delete</button>
-        </form>
+        <div class="detail">
+            <a th:href="'/blog/' + ${item.id} + '/edit'" class="btn btn-warning mr-2" />Edit</a><br><br>
+            <form th:action="'/blog/' + ${item.id} + '/delete'" method="POST">
+                <button class="btn btn-warning d-flex" type="submit">Delete</button>
+            </form>
+        </div>
     </div>
 </main><!-- /.container -->
 <footer th:insert="blocks/footer :: footer"></footer>
